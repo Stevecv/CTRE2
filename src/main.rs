@@ -1,7 +1,10 @@
 mod run;
+use std::env;
 
 fn main() {
-    let code: &str  = "\u{0080}\u{0002}\u{000C}Hello World!\u{001F}";
+    env::set_var("RUST_BACKTRACE", "full");
+
+    let code: &str  = "\u{0080}\u{0002}\u{00C8}aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u{001F}";
 
     use std::time::Instant;
     let now = Instant::now();
